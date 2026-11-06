@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../views/**/*.blade.php';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Warna utama portofolio */
+    --color-brand: #0f766e;
+    --color-brand-dark: #115e59;
+    --color-brand-light: #ccfbf1;
+    --color-canvas: #fafaf9;
+    --color-ink: #0f172a;
+    --color-muted: #64748b;
+}
+
+@layer base {
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-canvas text-ink antialiased;
+    }
+
+    ::selection {
+        @apply bg-brand-light text-brand-dark;
+    }
+}
